@@ -1,0 +1,24 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Navigate to the "Contact" link in the navigation menu.
+    commands:
+      - command: hover-text
+        text: Contact
+        description: link in the navigation menu
+        action: click
+  - prompt: Click the "Contact" link.
+    commands:
+      - command: hover-text
+        text: Contact
+        description: link in the navigation menu
+        action: click
+  - prompt: >-
+      Assert that the contact page loads successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the contact page is displayed
